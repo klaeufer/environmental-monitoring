@@ -1,5 +1,28 @@
 Raspberry pi/phidget setup:  
 
+Equipment:  
+A. 1 USB hub  
+B. sensors  
+C. phidget IO board  
+D. USB cable from phidget board to USB hub  
+E. USB data cable from USB hub to raspberry pi  
+F. raspberry pi  
+G. SD card with operating system  
+H. USB cable power supply (5V 1A maximum) for raspberry pi.  
+I. power supply for USB hub (comes with USB hub)  
+J. power supply for phidget board.  
+K. ethernet cable connecting raspberry pi to the router OR a wifi dongle plugged into the USB port   
+
+Setup:  
+1. Connect sensors (B) to IO board (C).  
+2. Connect power supply (J) to IO board (C).  
+3. Connect power supply (I) to USB hub (A).  
+4. Connect IO board (C) to USB hub (A) via usb cable (D).  
+5. Connect USB hub (A) to raspberry pi (F) via usb cable (E).  
+6. Connect ethernet cable (K) to raspberry pi (F). Ethernet cable is plugged directly into your router. If using a WiFi dongle, plug it (K) into the USB hub (A) in the highest power port possible (sometimes there are high-powered ports, usually a lesser number of them. For example, the current one I use has 2 high-powered ports. The WiFi dongle must be plugged in there).  
+7. Connect power supply for raspberry pi (H) to raspberry pi (F).  
+8. Insert SD card with OS and setup from "Raspberry pi setup" (G) into raspberry pi.  
+
 Raspberry pi setup:  
 1. Connect power to raspberry pi via USB connection (small connector) from 5V 1A power supply.   
 2. Connect raspberry pi to router via ethernet cable.  
@@ -127,25 +150,3 @@ Next, we need to forward the SSH port. Go to your router's administrative page a
 To test, run:
 ssh -l pi -p 1990 <ip_address>
 
-Equipment:
-A. 1 USB hub
-B. sensors
-C. phidget IO board
-D. USB cable from phidget board to USB hub
-E. USB data cable from USB hub to raspberry pi
-F. raspberry pi
-G. SD card with operating system
-H. USB cable power supply (5V 1A maximum) for raspberry pi.
-I. power supply for USB hub (comes with USB hub)
-J. power supply for phidget board.
-K. ethernet cable connecting raspberry pi to the router OR a wifi dongle plugged into the USB port 
-
-Setup:
-1. Connect sensors (B) to IO board (C).
-2. Connect power supply (J) to IO board (C).
-3. Connect power supply (I) to USB hub (A).
-4. Connect IO board (C) to USB hub (A) via usb cable (D).
-5. Connect USB hub (A) to raspberry pi (F) via usb cable (E).
-6. Connect ethernet cable (K) to raspberry pi (F). Ethernet cable is plugged directly into your router. If using a WiFi dongle, plug it (K) into the USB hub (A) in the highest power port possible (sometimes there are high-powered ports, usually a lesser number of them. For example, the current one I use has 2 high-powered ports. The WiFi dongle must be plugged in there).
-7. Connect power supply for raspberry pi (H) to raspberry pi (F).
-8. Insert SD card with OS and setup from "Raspberry pi setup" (G) into raspberry pi.
