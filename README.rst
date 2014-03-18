@@ -1,7 +1,7 @@
-# Raspberry pi/phidget setup:
+# _Raspberry pi/phidget setup:_
 
 ## Equipment:
-...A. 1 USB hub  
+A. 1 USB hub  
 B. sensors  
 C. phidget IO board  
 D. USB cable from phidget board to USB hub  
