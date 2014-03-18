@@ -8,9 +8,6 @@ Raspberry Pi Tutorial:
 #. Raspberry Pi Networking Setup. Cannot skip this step.
 #. Final Equipment Setup
 
-Phidgets Tutorial:
-------------------
-
 Raspberry Pi OS Install (Raspbian):
 ===================================
 
@@ -53,15 +50,7 @@ Raspberry Pi Networking Setup:
 
 Final Equipment Setup:
 ======================
-1. Connect sensors (B) to IO board (C).  
-#. Connect power supply (J) to IO board (C).  
-#. Connect power supply (I) to USB hub (A).  
-#. Connect IO board (C) to USB hub (A) via usb cable (D).  
-#. Connect USB hub (A) to raspberry pi (F) via usb cable (E).  
-#. Connect ethernet cable (K) to Raspberry Pi (F). Ethernet cable is plugged directly into your router. If using WiFi, WiFi Dongle (K) plugged into Raspberry Pi (F).
-#. Connect power supply for raspberry pi (H) to raspberry pi (F).  
-#. Insert SD card with Raspbian (G) into raspberry pi.
-#. Unplug power supply (H) and plug back in.
+.. image:: images/enclosure.JPG
 
 Cloning Raspbian image from SD card:
 ------------------------------------
@@ -194,4 +183,8 @@ Next, we need to forward the SSH port. Go to your router's administrative page a
 
 To test, run:
 ssh -l pi -p 1990 <ip_address>
+
+Phidgets Tutorial:
+==================
+
 
