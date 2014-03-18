@@ -44,18 +44,13 @@ Raspberry Pi Software Install:
 .. code-block:: bash
 
     sudo apt-get update
+    sudo apt-get install python-setuptools
+    sudo easy_install virtualenv
+    sudo easy_install pip
 
-libusb:
-1. Go to http://sourceforge.net/projects/libusb/files/libusb-1.0/
-2. Look at the latest version, replace 1.0.9 with the version:
-
-.. code-block:: bash
-
-    wget http://sourceforge.net/projects/libusb/files/libusb-1.0/libusb-**1.0.9**/libusb-**1.0.9**.tar.bz2
-    tar -xvjf libusb-1.0.9.tar.bz2
-    cd libusb-1.0.9
-    sudo ./configure; sudo make; sudo make install
-
+    sudo apt-get install git
+    sudo apt-get install mercurial
+    sudo apt-get install curl
 
 Raspberry Pi Networking Setup:
 ==============================
@@ -197,6 +192,44 @@ ssh -l pi -p 1990 <ip_address>
 
 Phidgets Tutorial:
 ==================
+
+Phidgets Software Install:
+==============================
+.. code-block:: bash
+
+    sudo apt-get update
+
+libusb:
+1. Go to http://sourceforge.net/projects/libusb/files/libusb-1.0/
+2. Look at the latest version, replace 1.0.9 with the version:
+
+.. code-block:: bash
+
+    wget http://sourceforge.net/projects/libusb/files/libusb-1.0/libusb-1.0.9/libusb-1.0.9.tar.bz2
+    tar -xvjf libusb-1.0.9.tar.bz2
+    cd libusb-1.0.9
+    sudo ./configure; sudo make; sudo make install
+
+libphidget:
+
+.. code-block:: bash
+    wget www.phidgets.com/downloads/libraries/libphidget.tar.gz
+    tar -zxvf libphidget.tar.gz
+    cd libphidget
+    sudo ./configure; sudo make; sudo make install
+
+To make sure everything works:
+
+.. code-block:: bash
+    wget www.phidgets.com/downloads/examples/phidget21-c-examples.tar.gz
+    tar -zxvf phidget21-c-examples.tar.gz 
+    cd phidget21-c-examples-2.1.8.XXXXXXXXX/
+    gcc HelloWorld.c -o HelloWorld -lphidget21
+    sudo ./HelloWorld
+
+While running the program, plug in the device and see if output appears. If no 
+output appears, there is a problem! All the issues I've encountered are due to 
+a lack of power. Make sure each device has it's own wall outlet.
 
 Final Equipment Setup:
 ======================
