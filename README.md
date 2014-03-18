@@ -1,6 +1,6 @@
-Raspberry pi/phidget setup:  
+# Raspberry pi/phidget setup:  
 
-Equipment:  
+## Equipment:  
 A. 1 USB hub  
 B. sensors  
 C. phidget IO board  
@@ -11,15 +11,15 @@ G. SD card with operating system
 H. USB cable power supply (5V 1A maximum) for raspberry pi.  
 I. power supply for USB hub (comes with USB hub)  
 J. power supply for phidget board.  
-K. ethernet cable connecting raspberry pi to the router OR a wifi dongle plugged into the USB port   
+K. ethernet cable connecting raspberry pi to the router.  
 
-Setup:  
+## Setup:  
 1. Connect sensors (B) to IO board (C).  
 2. Connect power supply (J) to IO board (C).  
 3. Connect power supply (I) to USB hub (A).  
 4. Connect IO board (C) to USB hub (A) via usb cable (D).  
 5. Connect USB hub (A) to raspberry pi (F) via usb cable (E).  
-6. Connect ethernet cable (K) to raspberry pi (F). Ethernet cable is plugged directly into your router. If using a WiFi dongle, plug it (K) into the USB hub (A) in the highest power port possible (sometimes there are high-powered ports, usually a lesser number of them. For example, the current one I use has 2 high-powered ports. The WiFi dongle must be plugged in there).  
+6. Connect ethernet cable (K) to raspberry pi (F). Ethernet cable is plugged directly into your router.
 7. Connect power supply for raspberry pi (H) to raspberry pi (F).  
 8. Insert SD card with OS and setup from "Raspberry pi setup" (G) into raspberry pi.  
 
