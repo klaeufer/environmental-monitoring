@@ -1,5 +1,5 @@
-Raspberry pi/phidget setup:
-===========================
+** Raspberry pi/phidget setup: **
+=================================
 
 Equipment:
 ----------
