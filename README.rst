@@ -1,6 +1,8 @@
-# _Raspberry pi/phidget setup:_
+Raspberry pi/phidget setup:
+===========================
 
-## Equipment:
+Equipment:
+----------
 A. 1 USB hub  
 B. sensors  
 C. phidget IO board  
@@ -13,7 +15,8 @@ I. power supply for USB hub (comes with USB hub)
 J. power supply for phidget board.  
 K. ethernet cable connecting raspberry pi to the router.  
 
-## Setup:
+Setup:
+------
 1. Connect sensors (B) to IO board (C).  
 2. Connect power supply (J) to IO board (C).  
 3. Connect power supply (I) to USB hub (A).  
@@ -23,7 +26,8 @@ K. ethernet cable connecting raspberry pi to the router.
 7. Connect power supply for raspberry pi (H) to raspberry pi (F).  
 8. Insert SD card with OS and setup from "Raspberry pi setup" (G) into raspberry pi.  
 
-Raspberry pi setup:  
+Raspberry pi setup:
+-------------------
 1. Connect power to raspberry pi via USB connection (small connector) from 5V 1A power supply.   
 2. Connect raspberry pi to router via ethernet cable.  
 3. Connect mouse and keyboard to raspberry pi.  
@@ -37,7 +41,8 @@ Raspberry pi setup:
 11. Once Raspbian boots, install software from "Software" section.  
 12. Set up networking from "Networking" section.  
 
-Software:  
+Software:
+---------
 Note: To download files without a browser, use wget.  
 Change the password:  
 passwd  
@@ -75,6 +80,7 @@ sudo apt-get install mercurial
 sudo apt-get install curl
 
 Networking (assumes connected via eth0 currently):
+--------------------------------------------------
 
 sudo apt-get install ssh
 sudo update-rc.d ssh defaults
