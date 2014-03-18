@@ -41,17 +41,12 @@ Instructions:
 
 Raspberry Pi Software Install:
 ==============================
-'sudo apt-get update'
-
-:code:'sudo'
-
-.. role:: bash(code)
-    :lanauge: bash
-Here is :bash:'code'
-
 .. code-block:: bash
 
-    sudo apt-get install python2.7-dev qt-sdk cmake git - See more at: http://nanvel.name/weblog/restructured-text/#sthash.KdTKziRC.dpuf
+    sudo apt-get update
+
+libusb:
+~~~~~~~
 
 Raspberry Pi Networking Setup:
 ==============================
