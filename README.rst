@@ -49,6 +49,10 @@ Raspberry Pi Software Install:
     :lanauge: bash
 Here is :bash:'code'
 
+.. code-block:: bash
+
+    sudo apt-get install python2.7-dev qt-sdk cmake git - See more at: http://nanvel.name/weblog/restructured-text/#sthash.KdTKziRC.dpuf
+
 Raspberry Pi Networking Setup:
 ==============================
 1. Plug Ethernet cable from router into Raspberry Pi directly.
