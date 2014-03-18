@@ -1,47 +1,86 @@
 Raspberry pi/phidget setup:
 ===========================
 
-Equipment:
-----------
-A. 1 USB hub
-B. sensors
-C. phidget IO board  
-D. USB cable from phidget board to USB hub  
-E. USB data cable from USB hub to raspberry pi  
-F. raspberry pi  
-G. SD card with operating system  
-H. USB cable power supply (5V 1A maximum) for raspberry pi.  
-I. power supply for USB hub (comes with USB hub)  
-J. power supply for phidget board.  
-K. ethernet cable connecting raspberry pi to the router.  
+Raspberry Pi Tutorial:
+======================
+1. Raspberry Pi OS Install (Raspbian). Skip this step if already using an SD card with Raspbian on it.
+#. Raspberry Pi Software Install. Skip this step if using an SD card with software on it.
+#. Raspberry Pi Networking Setup. Cannot skip this step.
+#. Final Equipment Setup
 
-Equipment Setup:
-----------------
+Phidgets Tutorial:
+------------------
+
+Raspberry Pi OS Install (Raspbian):
+===================================
+
+Equipment required:
+-------------------
+A. 1 USB hub
+B. USB data cable for USB hub to raspberry pi (comes with USB hub)
+C. raspberry pi
+D. Raspberry Pi power supply (5V 1A or higher) with USB connection
+E. 4GB or greater SD card
+F. power supply for USB hub (comes with USB hub)  
+G. ethernet cable connecting Raspberry Pi to router.
+H. USB mouse
+I. USB keyboard
+J. HDMI cable (male to male).
+K. Monitor or television with HDMI port.
+L. Linux computer with SD card reader. Can be done on Windows, but you're on your own.
+
+Instructions:
+-------------
+1. Insert blank SD card with at least 4GB capacity (E) into computer with SD card reader (L).
+#. Take SD card and format it using "gparted" on a linux machine to format entire SD card as fat32. This can also be done on Windows, but you're on your own. 
+#. Download NOOBS from http://www.raspberrypi.org/downloads and put on SD card.
+#. Connect USB hub (A) using data cable (B) to raspberry pi (C).
+#. Insert SD card (E) into Raspberry Pi (C).
+#. Connect power supply for USB hub (F) to USB hub (A).
+#. Connect mouse and keyboard (H and I) to USB hub (A).
+#. Connect monitor or television with HDMI port (K) to Raspberry Pi (C) via HDMI cable (J). Make sure you change your TV's input to HDMI.
+#. Connect power supply for Raspberry Pi (D) into Raspberry Pi (C).
+#. When the Raspberry Pi boots up, choose to install Raspbian.
+
+Raspberry Pi Software Install:
+==============================
+
+Raspberry Pi Networking Setup:
+==============================
+1. Plug Ethernet cable from router into Raspberry Pi directly.
+2. Connect USB Hub 
+
+
+Final Equipment Setup:
+======================
 1. Connect sensors (B) to IO board (C).  
-2. Connect power supply (J) to IO board (C).  
-3. Connect power supply (I) to USB hub (A).  
-4. Connect IO board (C) to USB hub (A) via usb cable (D).  
-5. Connect USB hub (A) to raspberry pi (F) via usb cable (E).  
-6. Connect ethernet cable (K) to raspberry pi (F). Ethernet cable is plugged directly into your router.
-7. Connect power supply for raspberry pi (H) to raspberry pi (F).  
-8. Insert SD card with OS and setup from "Raspberry pi setup" (G) into raspberry pi.  
+#. Connect power supply (J) to IO board (C).  
+#. Connect power supply (I) to USB hub (A).  
+#. Connect IO board (C) to USB hub (A) via usb cable (D).  
+#. Connect USB hub (A) to raspberry pi (F) via usb cable (E).  
+#. Connect ethernet cable (K) to Raspberry Pi (F). Ethernet cable is plugged directly into your router. If using WiFi, WiFi Dongle (K) plugged into Raspberry Pi (F).
+#. Connect power supply for raspberry pi (H) to raspberry pi (F).  
+#. Insert SD card with Raspbian (G) into raspberry pi.
+#. Unplug power supply (H) and plug back in.
+
+Cloning Raspbian image from SD card:
+------------------------------------
+
+Copying Raspbian image to new SD card:
+--------------------------------------
 
 Raspberry pi setup:
 -------------------
 1. Connect power to raspberry pi via USB connection (small connector) from 5V 1A power supply.   
-2. Connect raspberry pi to router via ethernet cable.  
-3. Connect mouse and keyboard to usb hub.
+#. Connect raspberry pi to router via ethernet cable.  
+#. Connect mouse and keyboard to USB hub.
 #. Connect power to USB hub.
 #. Connect USB Hub to raspberry pi.
-#. Insert SD card into raspberry pi.
 #. Connect raspberry pi to monitor or television via HDMI cable.  
-#. If SD card already has OS on it, skip to step 11.  
-#. Take SD card and format it using gparted on a linux machine to format entire SD card as fat32.  
-#. Download NOOBS from http://www.raspberrypi.org/downloads and put on SD card.  
-#. Insert the SD card and unplug and replug in the raspberry pi.  
-#. Choose to install Raspbian OS.   
+#. Insert SD card with OS on it into raspberry pi and unplug and replug in the raspberry pi.
 #. Once Raspbian boots, install software from "Software" section.  
 #. Set up networking from "Networking" section.  
+
 
 Software:
 ---------
@@ -101,8 +140,6 @@ sudo nano /etc/network/interfaces
 For ethernet connection:
 
 The file should read (replace the values with the values you wrote down previously):
-
-
 
 auto lo
 
