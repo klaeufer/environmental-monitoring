@@ -48,10 +48,6 @@ Raspberry Pi Networking Setup:
 2. Connect USB Hub 
 
 
-Final Equipment Setup:
-======================
-.. image:: http://bitbucket.org/lucpervasiveseminar/environmental-monitoring/raw/master/images/enclosure.jpg
-
 Cloning Raspbian image from SD card:
 ------------------------------------
 
@@ -187,4 +183,19 @@ ssh -l pi -p 1990 <ip_address>
 Phidgets Tutorial:
 ==================
 
+Final Equipment Setup:
+======================
+A. Raspberry Pi power supply (5V 1A or higher) with USB connection
+B. 4GB or greater SD card
+C. USB data cable connecting Raspberry Pi(L) to USB hub(H).
+D. Ethernet port. Plug in Ethernet cord from here to modem. If using WiFi, leave port empty.
+E. USB data cable connecting Phidgets board(J) to USB hub(H).
+F. Power supply for USB hub (5V 4A for the one in the picture).
+G. Power supply for Phidgets board (12V 2A).
+H. USB hub
+I. Phidgets sensors
+J. Phidgets IO board
+K. Mini USB WiFi dongle. Must be RTL8188CUS or RTL8192WiFi. Plugged into high-power port.
+L. Raspberry Pi
 
+.. image:: http://bitbucket.org/lucpervasiveseminar/environmental-monitoring/raw/master/images/enclosure.jpg
