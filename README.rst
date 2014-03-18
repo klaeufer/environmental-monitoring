@@ -41,7 +41,10 @@ Instructions:
 
 Raspberry Pi Software Install:
 ==============================
-::
+.. code-block::
+    sudo apt-get update
+
+.. code::
     sudo apt-get update
 
 Raspberry Pi Networking Setup:
