@@ -200,6 +200,7 @@ Phidgets Software Install:
     sudo apt-get update
 
 libusb:
+
 1. Go to http://sourceforge.net/projects/libusb/files/libusb-1.0/
 2. Look at the latest version, replace 1.0.9 with the version:
 
