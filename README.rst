@@ -195,7 +195,7 @@ G. Power supply for Phidgets board (12V 2A).
 H. USB hub
 I. Phidgets sensors
 J. Phidgets IO board
-K. Mini USB WiFi dongle. Must be RTL8188CUS or RTL8192WiFi. Plugged into high-power port.
+K. Mini USB WiFi dongle. Do not use if using direct Ethernet connection. Must be RTL8188CUS or RTL8192WiFi. Plugged into high-power port.
 L. Raspberry Pi
 
 .. image:: http://bitbucket.org/lucpervasiveseminar/environmental-monitoring/raw/master/images/enclosure.jpg
