@@ -203,14 +203,11 @@ libusb:
 
 1. Go to http://sourceforge.net/projects/libusb/files/libusb-1.0/
 2. Look at the latest version, replace 1.0.9 with the version:
-
 .. code-block:: bash
-
     wget http://sourceforge.net/projects/libusb/files/libusb-1.0/libusb-1.0.9/libusb-1.0.9.tar.bz2
     tar -xvjf libusb-1.0.9.tar.bz2
     cd libusb-1.0.9
     sudo ./configure; sudo make; sudo make install
-
 libphidget:
 
 .. code-block:: bash
@@ -218,7 +215,6 @@ libphidget:
     tar -zxvf libphidget.tar.gz
     cd libphidget
     sudo ./configure; sudo make; sudo make install
-
 To make sure everything works:
 
 .. code-block:: bash
