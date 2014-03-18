@@ -57,133 +57,88 @@ Raspberry Pi Networking Setup:
 1. Plug Ethernet cable from router into Raspberry Pi directly.
 2. Connect USB Hub 
 
-
-Cloning Raspbian image from SD card:
-------------------------------------
-
-Copying Raspbian image to new SD card:
---------------------------------------
-
-Raspberry pi setup:
--------------------
-1. Connect power to raspberry pi via USB connection (small connector) from 5V 1A power supply.   
-#. Connect raspberry pi to router via ethernet cable.  
-#. Connect mouse and keyboard to USB hub.
-#. Connect power to USB hub.
-#. Connect USB Hub to raspberry pi.
-#. Connect raspberry pi to monitor or television via HDMI cable.  
-#. Insert SD card with OS on it into raspberry pi and unplug and replug in the raspberry pi.
-#. Once Raspbian boots, install software from "Software" section.  
-#. Set up networking from "Networking" section.  
-
-
-Software:
----------
-Note: To download files without a browser, use wget.  
-Change the password:  
-passwd  
-The default password for the pi is “raspberry”.  
-sudo apt-get update  
-libusb  
-1. Go to http://sourceforge.net/projects/libusb/files/libusb-1.0/  
-2. Look at the latest version, replace 1.0.9 with the version.  
-wget http://sourceforge.net/projects/libusb/files/libusb-1.0/libusb-1.0.9/libusb-1.0.9.tar.bz2  
-tar -xvjf libusb-1.0.9.tar.bz2  
-cd libusb-1.0.9  
-sudo ./configure; sudo make; sudo make install  
-
-libphidget
-
-wget www.phidgets.com/downloads/libraries/libphidget.tar.gz
-tar -zxvf libphidget.tar.gz
-cd libphidget
-sudo ./configure; sudo make; sudo make install
-
-To make sure everything works:
-wget www.phidgets.com/downloads/examples/phidget21-c-examples.tar.gz
-tar -zxvf phidget21-c-examples.tar.gz 
-cd phidget21-c-examples-2.1.8.20130723/
-gcc HelloWorld.c -o HelloWorld -lphidget21
-sudo ./HelloWorld
-
-While running the program, plug in the device and see if output appears. If no output appears, there is a problem! All the issues I've encountered are due to a lack of power. Make sure each device has it's own wall outlet.
-
-sudo apt-get install python-setuptools
-sudo easy_install virtualenv
-
-sudo apt-get install git
-sudo apt-get install mercurial
-sudo apt-get install curl
-
 Networking (assumes connected via eth0 currently):
 --------------------------------------------------
 
-sudo apt-get install ssh
-sudo update-rc.d ssh defaults
-sudo reboot
+.. code-block:: bash
+    sudo apt-get install ssh
+    sudo update-rc.d ssh defaults
+    sudo reboot
 
-ifconfig
+    ifconfig
 
-write down inet addr, Bcast, and Mask for eth0
+write down inet addr, Bcast, and Mask for eth0.
 
-netstat -nr
+.. code-block:: bash
+    netstat -nr
 
 write down Gateway address and Destination address.
 
-sudo nano /etc/network/interfaces
+.. code-block:: bash
+    sudo nano /etc/network/interfaces
 
-For ethernet connection:
+Choose if you want to use WiFi or Ethernet.
 
-The file should read (replace the values with the values you wrote down previously):
+Ethernet:
+---------
 
-auto lo
+The file (/etc/network/interfaces) should read (replace the values with the values you wrote down previously)::
 
-iface lo inet loopback
+    auto lo
 
-iface eth0 inet static
-address 192.168.1.135
-netmask 255.255.255.0
-network 192.168.1.0
-broadcast 192.168.1.255
-gateway 192.168.1.1
+    iface lo inet loopback
 
-auto wlan0
-iface wlan0 inet manual
-wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+    iface eth0 inet static
+    address 192.168.1.135
+    netmask 255.255.255.0
+    network 192.168.1.0
+    broadcast 192.168.1.255
+    gateway 192.168.1.1
 
-iface default inet dhcp
+    auto wlan0
+    iface wlan0 inet manual
+    wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 
-Run a “sudo reboot” to varify changes work. “ping google.com” to make sure.
+    iface default inet dhcp
 
-For wireless connection (MUST use rtl8192cu/rtl8188CUS wifi adapter!):
+Run::
+    sudo reboot
+    ping google.com
 
-auto lo
+WiFi (MUST use RTL8192CU or RTL8188CUS WiFi Adapter!):
+------------------------------------------------------
 
-iface lo inet loopback
-iface eth0 inet dhcp
+.. code-block:: bash
 
-auto wlan0
-iface wlan0 inet manual
-wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+    auto lo
 
-iface default inet static
-address 192.168.1.135
-netmask 255.255.255.0
-network 192.168.1.0
-broadcast 192.168.1.255
-gateway 192.168.1.1
+    iface lo inet loopback
+    iface eth0 inet dhcp
 
-Also edit the /etc/wpa_supplicant/wpa_supplicant.conf file (filling in your ssid and password):
+    auto wlan0
+    iface wlan0 inet manual
+    wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
+    iface default inet static
+    address 192.168.1.135
+    netmask 255.255.255.0
+    network 192.168.1.0
+    broadcast 192.168.1.255
+    gateway 192.168.1.1
 
-network={
+Also edit the /etc/wpa_supplicant/wpa_supplicant.conf file (filling in your ssid and password)::
+
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+
+    network={
         ssid="your_ssid"
         psk="your_password"
-}
+    }
 
-Run a “sudo reboot” to varify changes work. “ping google.com” to make sure.
+Run::
+    sudo reboot
+    ping google.com
 
 Next, we need to forward the SSH port. Go to your router's administrative page and forward the external port 1990 to the internal port 22 (SSH) with ip address that you specified for the raspberry pi.
 
@@ -195,7 +150,8 @@ Phidgets Tutorial:
 
 Phidgets Software Install:
 ==============================
-::
+.. code-block:: bash
+
     sudo apt-get update
 
 libusb:
@@ -245,3 +201,9 @@ L. Raspberry Pi
 .. image:: http://bitbucket.org/lucpervasiveseminar/environmental-monitoring/raw/master/images/enclosure.jpg
 
 Please "View" the image to see a larger photo that can be zoomed in.
+
+Cloning Raspbian image from SD card:
+------------------------------------
+
+Copying Raspbian image to new SD card:
+--------------------------------------
