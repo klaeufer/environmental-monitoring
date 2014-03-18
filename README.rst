@@ -41,6 +41,8 @@ Instructions:
 
 Raspberry Pi Software Install:
 ==============================
+.. code:: bash
+    sudo apt-get update
 
 Raspberry Pi Networking Setup:
 ==============================
