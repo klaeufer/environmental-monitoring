@@ -199,3 +199,5 @@ K. Mini USB WiFi dongle. Do not use if using direct Ethernet connection. Must be
 L. Raspberry Pi
 
 .. image:: http://bitbucket.org/lucpervasiveseminar/environmental-monitoring/raw/master/images/enclosure.jpg
+
+Please "View" the image to see a larger photo that can be zoomed in.
