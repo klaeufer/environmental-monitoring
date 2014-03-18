@@ -1,31 +1,32 @@
-Raspberry pi/phidget setup:
-Raspberry pi setup:
-1. Connect power to raspberry pi via USB connection (small connector) from 5V 1A power supply. 
-2. Connect raspberry pi to router via ethernet cable.
-3. Connect mouse and keyboard to raspberry pi.
-4. Insert SD card into raspberry pi
-5. Connect raspberry pi to monitor or television via HDMI cable
-6. If SD card already has OS on it, skip to step 11
-7. Take SD card and format it using gparted on a linux machine to format entire SD card as fat32.
-8. Download NOOBS from http://www.raspberrypi.org/downloads and put on SD card.
-9. Insert the SD card and unplug and replug in the raspberry pi.
-10. Choose to install Raspbian OS. 
-11. Once Raspbian boots, install software from "Software" section.
-12. Set up networking from "Networking" section.
+Raspberry pi/phidget setup:  
 
-Software:
-Note: To download files without a browser, use wget.
-Change the password:
-passwd
-The default password for the pi is “raspberry”.
-sudo apt-get update
-libusb
-1. Go to http://sourceforge.net/projects/libusb/files/libusb-1.0/
-2. Look at the latest version, replace 1.0.9 with the version.
-wget http://sourceforge.net/projects/libusb/files/libusb-1.0/libusb-1.0.9/libusb-1.0.9.tar.bz2
-tar -xvjf libusb-1.0.9.tar.bz2
-cd libusb-1.0.9
-sudo ./configure; sudo make; sudo make install
+Raspberry pi setup:  
+1. Connect power to raspberry pi via USB connection (small connector) from 5V 1A power supply.   
+2. Connect raspberry pi to router via ethernet cable.  
+3. Connect mouse and keyboard to raspberry pi.  
+4. Insert SD card into raspberry pi  
+5. Connect raspberry pi to monitor or television via HDMI cable.  
+6. If SD card already has OS on it, skip to step 11.  
+7. Take SD card and format it using gparted on a linux machine to format entire SD card as fat32.  
+8. Download NOOBS from http://www.raspberrypi.org/downloads and put on SD card.  
+9. Insert the SD card and unplug and replug in the raspberry pi.  
+10. Choose to install Raspbian OS.   
+11. Once Raspbian boots, install software from "Software" section.  
+12. Set up networking from "Networking" section.  
+
+Software:  
+Note: To download files without a browser, use wget.  
+Change the password:  
+passwd  
+The default password for the pi is “raspberry”.  
+sudo apt-get update  
+libusb  
+1. Go to http://sourceforge.net/projects/libusb/files/libusb-1.0/  
+2. Look at the latest version, replace 1.0.9 with the version.  
+wget http://sourceforge.net/projects/libusb/files/libusb-1.0/libusb-1.0.9/libusb-1.0.9.tar.bz2  
+tar -xvjf libusb-1.0.9.tar.bz2  
+cd libusb-1.0.9  
+sudo ./configure; sudo make; sudo make install  
 
 libphidget
 
