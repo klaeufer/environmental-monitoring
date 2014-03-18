@@ -41,9 +41,6 @@ Instructions:
 
 Raspberry Pi Software Install:
 ==============================
-.. code-block:: bash
-    sudo apt-get update
-
 .. code:: bash
     sudo apt-get update
 
