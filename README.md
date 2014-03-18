@@ -1,6 +1,6 @@
-# Raspberry pi/phidget setup:  
+# Raspberry pi/phidget setup:
 
-## Equipment:  
+## Equipment:
 A. 1 USB hub  
 B. sensors  
 C. phidget IO board  
@@ -13,7 +13,7 @@ I. power supply for USB hub (comes with USB hub)
 J. power supply for phidget board.  
 K. ethernet cable connecting raspberry pi to the router.  
 
-## Setup:  
+## Setup:
 1. Connect sensors (B) to IO board (C).  
 2. Connect power supply (J) to IO board (C).  
 3. Connect power supply (I) to USB hub (A).  
