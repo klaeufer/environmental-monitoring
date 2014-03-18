@@ -50,7 +50,7 @@ Raspberry Pi Networking Setup:
 
 Final Equipment Setup:
 ======================
-.. image:: images/enclosure.JPG
+.. image:: /images/enclosure.JPG
 
 Cloning Raspbian image from SD card:
 ------------------------------------
