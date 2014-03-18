@@ -211,9 +211,8 @@ libusb:
     cd libusb-1.0.9
     sudo ./configure; sudo make; sudo make install
 
-libphidget:
+libphidget::
 
-.. code-block:: bash
     wget www.phidgets.com/downloads/libraries/libphidget.tar.gz
     tar -zxvf libphidget.tar.gz
     cd libphidget
