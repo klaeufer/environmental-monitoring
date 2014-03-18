@@ -40,8 +40,11 @@ Instructions:
 #. When the Raspberry Pi boots up, choose to install Raspbian.
 
 Raspberry Pi Software Install:
-==============================:
+==============================
+::
     sudo apt-get update
+
+'sudo apt-get update'
 
 
 Raspberry Pi Networking Setup:
