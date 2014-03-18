@@ -44,9 +44,6 @@ Raspberry Pi Software Install:
 ::
     sudo apt-get update
 
-'sudo apt-get update'
-
-
 Raspberry Pi Networking Setup:
 ==============================
 1. Plug Ethernet cable from router into Raspberry Pi directly.
