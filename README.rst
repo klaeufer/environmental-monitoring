@@ -195,16 +195,13 @@ Phidgets Tutorial:
 
 Phidgets Software Install:
 ==============================
-.. code-block:: bash
-
+::
     sudo apt-get update
 
 libusb:
 
 1. Go to http://sourceforge.net/projects/libusb/files/libusb-1.0/
-2. Look at the latest version, replace 1.0.9 with the version:
-
-.. code-block:: bash
+2. Look at the latest version, replace 1.0.9 with the version::
 
     wget http://sourceforge.net/projects/libusb/files/libusb-1.0/libusb-1.0.9/libusb-1.0.9.tar.bz2
     tar -xvjf libusb-1.0.9.tar.bz2
@@ -218,9 +215,8 @@ libphidget::
     cd libphidget
     sudo ./configure; sudo make; sudo make install
 
-To make sure everything works:
+To make sure everything works::
 
-.. code-block:: bash
     wget www.phidgets.com/downloads/examples/phidget21-c-examples.tar.gz
     tar -zxvf phidget21-c-examples.tar.gz 
     cd phidget21-c-examples-2.1.8.XXXXXXXXX/
