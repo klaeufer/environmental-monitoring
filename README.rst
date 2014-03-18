@@ -50,7 +50,7 @@ Raspberry Pi Networking Setup:
 
 Final Equipment Setup:
 ======================
-.. image:: http://bitbucket.org/lucpervasiveseminar/environmental-monitoring/images/enclosure.JPG
+.. image:: http://bitbucket.org/lucpervasiveseminar/environmental-monitoring/raw/master/images/enclosure.JPG
 
 Cloning Raspbian image from SD card:
 ------------------------------------
