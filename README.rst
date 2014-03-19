@@ -89,6 +89,7 @@ The file (/etc/network/interfaces) should read (replace the values with the valu
     iface default inet dhcp
 
 Run the following commands in a terminal::
+
     sudo reboot
     ping google.com
 
@@ -115,7 +116,7 @@ WiFi (MUST use RTL8192CU or RTL8188CUS WiFi Adapter!):
     broadcast 192.168.1.255
     gateway 192.168.1.1
 
-Also edit the /etc/wpa_supplicant/wpa_supplicant.conf file (filling in your ssid and password)::
+Also edit the /etc/wpa_supplicant/wpa_supplicant.conf file (filling in your ssid and password. Some issues can occur if your ssid has spaces, so if you run into trouble, change your ssid to a single word to test)::
 
     ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
     update_config=1
@@ -126,6 +127,7 @@ Also edit the /etc/wpa_supplicant/wpa_supplicant.conf file (filling in your ssid
     }
 
 Run the following commands in a terminal::
+
     sudo reboot
     ping google.com
 
