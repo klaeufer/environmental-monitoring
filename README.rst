@@ -3,9 +3,9 @@ Raspberry pi/phidget setup:
 
 Raspberry Pi Tutorial:
 ======================
-1. Raspberry Pi OS Install (Raspbian). Skip this step if already using an SD card with Raspbian on it.
-#. Raspberry Pi Software Install. Skip this step if using an SD card with software on it.
+1. Raspberry Pi OS Install (Raspbian). Skip this step if already using an SD card with Raspbian on it (provided by us, not a company).
 #. Raspberry Pi Networking Setup. Cannot skip this step.
+#. Raspberry Pi Software Install. Skip this step if using an SD card with software on it.
 #. Final Equipment Setup
 
 Raspberry Pi OS Install (Raspbian):
@@ -17,7 +17,7 @@ A. 1 USB hub
 B. USB data cable for USB hub to raspberry pi (comes with USB hub)
 C. raspberry pi
 D. Raspberry Pi power supply (5V 1A or higher) with USB connection
-E. 4GB or greater SD card
+E. 8GB or greater SD card
 F. power supply for USB hub (comes with USB hub)  
 G. ethernet cable connecting Raspberry Pi to router.
 H. USB mouse
@@ -28,29 +28,16 @@ L. Linux computer with SD card reader. Can be done on Windows, but you're on you
 
 Instructions:
 -------------
-1. Insert blank SD card with at least 4GB capacity (E) into computer with SD card reader (L).
+1. Insert blank SD card with at least 8GB capacity (E) into computer with SD card reader (L).
 #. Take SD card and format it using "gparted" on a linux machine to format entire SD card as fat32. This can also be done on Windows, but you're on your own. 
-#. Download NOOBS from http://www.raspberrypi.org/downloads and put on SD card.
+#. Download NOOBS from http://www.raspberrypi.org/downloads and extract to SD card.
 #. Connect USB hub (A) using data cable (B) to raspberry pi (C).
 #. Insert SD card (E) into Raspberry Pi (C).
 #. Connect power supply for USB hub (F) to USB hub (A).
 #. Connect mouse and keyboard (H and I) to USB hub (A).
 #. Connect monitor or television with HDMI port (K) to Raspberry Pi (C) via HDMI cable (J). Make sure you change your TV's input to HDMI.
 #. Connect power supply for Raspberry Pi (D) into Raspberry Pi (C).
-#. When the Raspberry Pi boots up, choose to install Raspbian.
-
-Raspberry Pi Software Install:
-==============================
-.. code-block:: bash
-
-    sudo apt-get update
-    sudo apt-get install python-setuptools
-    sudo easy_install virtualenv
-    sudo easy_install pip
-
-    sudo apt-get install git
-    sudo apt-get install mercurial
-    sudo apt-get install curl
+#. When the Raspberry Pi boots up, choose to install only Raspbian.
 
 Raspberry Pi Networking Setup:
 ==============================
@@ -101,9 +88,11 @@ The file (/etc/network/interfaces) should read (replace the values with the valu
 
     iface default inet dhcp
 
-Run::
+Run the following commands in a terminal::
     sudo reboot
     ping google.com
+
+See Port Forwarding section after WiFi.
 
 WiFi (MUST use RTL8192CU or RTL8188CUS WiFi Adapter!):
 ------------------------------------------------------
@@ -136,9 +125,36 @@ Also edit the /etc/wpa_supplicant/wpa_supplicant.conf file (filling in your ssid
         psk="your_password"
     }
 
-Run::
+Run the following commands in a terminal::
     sudo reboot
     ping google.com
+
+Port Forwarding:
+----------------
+We need to forward the SSH port. These instructions are for Linksys routers.
+1. Login to your router. (usually 192.168.1.1)
+#. Look for the single port forwarding page.
+#. Forward the external port 1990 to the internal port 22 (SSH port) with the IP address that you specified for the Raspberry Pi.
+#. Save changes to your configuration on your router.
+#. "sudo reboot" the Raspberry Pi. 
+#. Test that this worked by doing::
+    ssh -l pi -p 1990 <ip address>
+
+Where <ip address> is your ROUTER's public IP address. Google "ip address" to find this information.
+
+Raspberry Pi Software Install:
+==============================
+.. code-block:: bash
+
+    sudo apt-get update
+    sudo apt-get install python-setuptools
+    sudo easy_install virtualenv
+    sudo easy_install pip
+
+    sudo apt-get install git
+    sudo apt-get install mercurial
+    sudo apt-get install curl
+
 
 Next, we need to forward the SSH port. Go to your router's administrative page and forward the external port 1990 to the internal port 22 (SSH) with ip address that you specified for the raspberry pi.
 
@@ -186,7 +202,7 @@ a lack of power. Make sure each device has it's own wall outlet.
 Final Equipment Setup:
 ======================
 A. Raspberry Pi power supply (5V 1A or higher) with USB connection
-B. 4GB or greater SD card
+B. 8GB or greater SD card
 C. USB data cable connecting Raspberry Pi(L) to USB hub(H).
 D. Ethernet port. Plug in Ethernet cord from here to modem. If using WiFi, leave port empty.
 E. USB data cable connecting Phidgets board(J) to USB hub(H).
