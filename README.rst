@@ -33,10 +33,10 @@ Instructions:
 #. Download NOOBS from http://www.raspberrypi.org/downloads and extract to SD card.
 #. Connect USB hub (A) using data cable (B) to raspberry pi (C).
 #. Insert SD card (E) into Raspberry Pi (C).
-#. Connect power supply for USB hub (F) to USB hub (A).
+#. Connect power supply for USB hub (F) to USB hub (A). Must be in it's own wall socket.
 #. Connect mouse and keyboard (H and I) to USB hub (A).
 #. Connect monitor or television with HDMI port (K) to Raspberry Pi (C) via HDMI cable (J). Make sure you change your TV's input to HDMI.
-#. Connect power supply for Raspberry Pi (D) into Raspberry Pi (C).
+#. Connect power supply for Raspberry Pi (D) into Raspberry Pi (C). Must be in it's own wall socket.
 #. When the Raspberry Pi boots up, choose to install only Raspbian.
 
 Raspberry Pi Networking Setup:
@@ -93,6 +93,8 @@ Run the following commands in a terminal::
     sudo reboot
     ping google.com
 
+If the ping to google works, you have a working configuration!
+
 See Port Forwarding section after WiFi.
 
 WiFi (MUST use RTL8192CU or RTL8188CUS WiFi Adapter!):
@@ -130,6 +132,8 @@ Run the following commands in a terminal::
 
     sudo reboot
     ping google.com
+
+If the ping to google works, you have a working configuration!
 
 Port Forwarding:
 ----------------
@@ -203,13 +207,13 @@ a lack of power. Make sure each device has it's own wall outlet.
 
 Final Equipment Setup:
 ======================
-A. Raspberry Pi power supply (5V 1A or higher) with USB connection
+A. Raspberry Pi power supply (5V 1A or higher) with USB connection connected directly to wall socket.
 B. 8GB or greater SD card
 C. USB data cable connecting Raspberry Pi(L) to USB hub(H).
 D. Ethernet port. Plug in Ethernet cord from here to modem. If using WiFi, leave port empty.
 E. USB data cable connecting Phidgets board(J) to USB hub(H).
-F. Power supply for USB hub (5V 4A for the one in the picture).
-G. Power supply for Phidgets board (12V 2A).
+F. Power supply for USB hub (5V 4A for the one in the picture) plugged directly to wall socket.
+G. Power supply for Phidgets board (12V 2A) plugged directly to wall socket.
 H. USB hub
 I. Phidgets sensors
 J. Phidgets IO board
