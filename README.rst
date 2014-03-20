@@ -237,11 +237,13 @@ Cloning Raspbian image from SD card:
 The purpose of cloning a Raspbian image from the SD card is to be able to take
 a working configuration and then make "clones" of it for others to use. There
 are some important things to note:
+
 1. The image must be the smallest possible. This is because it is complicated to take a larger image and put it on a smaller SD card. To avoid this, keep the image size as small as possible. For example, use a 8GB SD card for your image. This way, others with 8GB SD cards or larger can use it.
 2. Use a linux machine with an SD card reader to do your imaging. This cloning of the image can be done in one line on linux.
 3. Make sure you test your image before you overwrite an old one in the repository! Copy the image to a new SD card and put it in the Raspberry Pi to test it.
 
 Now, here are the steps to actually do it:
+
 1. Put SD card with working Raspbian configuration of size 8GB into your SD card reader on your linux machine.
 2. Run "sudo gparted".
 3. In the gparted UI, on the top left is the menu GParted, click that and go to Devices.
@@ -258,6 +260,7 @@ Copying Raspbian image to new SD card:
 --------------------------------------
 
 Here are the steps to clone the Raspbian image to an SD card:
+
 1. Put ia blank SD card of size 8GB into your linux machine.
 2. Run "sudo gparted".
 3. In the gparted UI, on the top left is the menu GParted, click that and go to Devices.
