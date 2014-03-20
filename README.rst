@@ -41,35 +41,45 @@ Instructions:
 
 Raspberry Pi Networking Setup:
 ==============================
-1. Plug Ethernet cable from router into Raspberry Pi directly.
-2. Connect USB Hub 
 
-Networking (assumes connected via eth0 currently):
---------------------------------------------------
+I assume here that you have either the same setup as when you installed
+Raspbian (you just finished that step) or you have a final setup and you are 
+adjusting an already working configuration (changing the IP address for
+example).
 
-.. code-block:: bash
+First time networking users, run these commands::
+
     sudo apt-get install ssh
     sudo update-rc.d ssh defaults
     sudo reboot
 
+On another computer already on the network, find the Bcast, Mask, and
+appropriate inet address. This can be done on linux by the following
+instructions::
+
     ifconfig
 
-write down inet addr, Bcast, and Mask for eth0.
+Write down inet addr, Bcast, and Mask for eth0. For example, my inet address
+is 192.168.1.135, my Bcast address is 192.168.1.255, my Mask is 255.255.255.0
 
-.. code-block:: bash
+Now we need to find the Gateway and Destination addresses. On linux::
+
     netstat -nr
 
-write down Gateway address and Destination address.
+Write down Gateway address and Destination address. For example, my Gateway
+address is 192.168.1.1 and my Destination address is 192.168.1.0
 
-.. code-block:: bash
+Now with this information, we can setup WiFi or Ethernet::
+
     sudo nano /etc/network/interfaces
 
-Choose if you want to use WiFi or Ethernet.
+Decide if you want to use Ethernet or WiFi and follow those instructions.
 
 Ethernet:
 ---------
 
-The file (/etc/network/interfaces) should read (replace the values with the values you wrote down previously)::
+The file (/etc/network/interfaces) should read (replace the values with the 
+values you wrote down previously, the values match my values previously)::
 
     auto lo
 
@@ -100,7 +110,8 @@ See Port Forwarding section after WiFi.
 WiFi (MUST use RTL8192CU or RTL8188CUS WiFi Adapter!):
 ------------------------------------------------------
 
-.. code-block:: bash
+The file (/etc/network/interfaces) should read (replace the values with the 
+values you wrote down previously, the values match my values previously)::
 
     auto lo
 
@@ -144,12 +155,14 @@ We need to forward the SSH port. These instructions are for Linksys routers.
 #. Save changes to your configuration on your router.
 #. "sudo reboot" the Raspberry Pi. 
 #. Test that this worked by doing::
+
     ssh -l pi -p 1990 <ip address>
 
 Where <ip address> is your ROUTER's public IP address. Google "ip address" to find this information.
 
 Raspberry Pi Software Install:
 ==============================
+
 .. code-block:: bash
 
     sudo apt-get update
@@ -160,12 +173,6 @@ Raspberry Pi Software Install:
     sudo apt-get install git
     sudo apt-get install mercurial
     sudo apt-get install curl
-
-
-Next, we need to forward the SSH port. Go to your router's administrative page and forward the external port 1990 to the internal port 22 (SSH) with ip address that you specified for the raspberry pi.
-
-To test, run:
-ssh -l pi -p 1990 <ip_address>
 
 Phidgets Tutorial:
 ==================
