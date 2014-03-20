@@ -234,5 +234,42 @@ Please "View" the image to see a larger photo that can be zoomed in.
 Cloning Raspbian image from SD card:
 ------------------------------------
 
+The purpose of cloning a Raspbian image from the SD card is to be able to take
+a working configuration and then make "clones" of it for others to use. There
+are some important things to note:
+1. The image must be the smallest possible. This is because it is complicated to take a larger image and put it on a smaller SD card. To avoid this, keep the image size as small as possible. For example, use a 8GB SD card for your image. This way, others with 8GB SD cards or larger can use it.
+2. Use a linux machine with an SD card reader to do your imaging. This cloning of the image can be done in one line on linux.
+3. Make sure you test your image before you overwrite an old one in the repository! Copy the image to a new SD card and put it in the Raspberry Pi to test it.
+
+Now, here are the steps to actually do it:
+1. Put SD card with working Raspbian configuration of size 8GB into your SD card reader on your linux machine.
+2. Run "sudo gparted".
+3. In the gparted UI, on the top left is the menu GParted, click that and go to Devices.
+4. You will see the name of your SD card there. For example, /dev/sdb2.
+5. Run this command from a command line (replacing /dev/sdb2 with your name)::
+
+    sudo dd if=/dev/sdb2 of=~/Desktop/raspberrypi.dmg
+
+6. This will create the image on your Desktop called raspberrypi.dmg. This is your image. Running the command takes several minutes and shows no sign of progress until it is finished. **DO NOT CANCEL THIS COMMAND WHILE RUNNING OR YOU WILL CORRUPT YOUR SD CARD**.
+#. If you corrupt your SD card, you can use the instructions in the next section to uncorrupt the SD card.
+#. When it is finished, you will have your 8GB Raspberry Pi image. Commit this to the repository under /images
+
 Copying Raspbian image to new SD card:
 --------------------------------------
+
+Here are the steps to clone the Raspbian image to an SD card:
+1. Put ia blank SD card of size 8GB into your linux machine.
+2. Run "sudo gparted".
+3. In the gparted UI, on the top left is the menu GParted, click that and go to Devices.
+4. You will see the name of your SD card there, click it.
+5. Delete all partitions from this SD card.
+6. Format the remaining unallocated space as fat32.
+#. Click the Edit menu option and do "apply all"
+#. After this is finished, you have a blank SD card formatted with fat32. Note the name of your SD card. For example, /dev/sdb2
+#. Run this command from a command line (replacing /dev/sdb2 with your name)::
+
+    sudo dd if=.../images/raspberrypi.dmg of=~/dev/sdb2
+
+#. This will clone the raspberrypi image to your SD card. Running the command cah take almost an hour and shows no sign of progress until it is finished. **DO NOT CANCEL THIS COMMAND WHILE RUNNING OR YOU WILL CORRUPT YOUR SD CARD**.
+#. If you corrupt your SD card, you can use gparted again to remove all partitions and format as fat32 again to try again.
+#. When it is finished, you will have your 8GB Raspberry Pi image on your SD card.
