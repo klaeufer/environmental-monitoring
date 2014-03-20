@@ -33,10 +33,11 @@ Instructions:
 #. Download NOOBS from http://www.raspberrypi.org/downloads and extract to SD card.
 #. Connect USB hub (A) using data cable (B) to raspberry pi (C).
 #. Insert SD card (E) into Raspberry Pi (C).
-#. Connect power supply for USB hub (F) to USB hub (A). Must be in it's own wall socket.
+#. Connect power supply for USB hub (F) to USB hub (A). **Must be in it's own
+wall socket. **
 #. Connect mouse and keyboard (H and I) to USB hub (A).
 #. Connect monitor or television with HDMI port (K) to Raspberry Pi (C) via HDMI cable (J). Make sure you change your TV's input to HDMI.
-#. Connect power supply for Raspberry Pi (D) into Raspberry Pi (C). Must be in it's own wall socket.
+#. Connect power supply for Raspberry Pi (D) into Raspberry Pi (C). **Must be in it's own wall socket. **
 #. When the Raspberry Pi boots up, choose to install only Raspbian.
 
 Raspberry Pi Networking Setup:
@@ -47,7 +48,7 @@ Raspbian (you just finished that step) or you have a final setup and you are
 adjusting an already working configuration (changing the IP address for
 example).
 
-First time networking users, run these commands::
+First time networking users, run these commands to enable SSH::
 
     sudo apt-get install ssh
     sudo update-rc.d ssh defaults
