@@ -54,3 +54,16 @@ by this one:
 	elif sys.platform == 'darwin' or sys.platform == 'linux' **or sys.platform == 'linux2':**
 
 So simple!! Right!!!
+
+
+
+Recommendation:
+================
+If you get this kind of error, first check out the plaform name you are getting from your default Python installation
+
+Go to your Python interpreter and run following commands:
+   >>> import sys
+   >>> sys.platform
+   'linux2'
+
+If this name is not set in your Phidget module, then add it. Done!!
