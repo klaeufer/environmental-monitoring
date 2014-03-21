@@ -25,8 +25,7 @@ I had tried to run TemperatureSensor-sample.py script provided by Phidget suppor
 
 Issue:
 =====
-1. The Phidget.py module in phidget's python library, located at **/usr/local/lib/python2.7/dist-packages/Phidgets/Phidget.py** , 
-instantiates various event handlers. 
+1. The Phidget.py module in phidget's python library, located at **/usr/local/lib/python2.7/dist-packages/Phidgets/Phidget.py** , instantiates various event handlers. 
 
 #. Those handlers are later used by your script, if you import Phidget.py module. The module generates those handlers based on your 
 host platform, like, WIndows, Linux, Mac etc. 
