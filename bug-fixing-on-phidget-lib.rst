@@ -1,17 +1,17 @@
 Platform:
 =========
-1. Raspbian OS on Raspberry Pi
+1. Raspbian on Raspberry Pi
 #. Phidget Interface Kit 8/8/8 (I/O board)
-#. Python with version 2.7 or 3.2
+#. Python (2.7 or 3.2)
 #. PhidgetPython API installed
 
 Context:
 ========
-There is a bug with Phidget's Python library. If you want to work with Phidget I/O board using this library on Raspberry Pi then there might be a problem 
-in running your script. It may throw an **AttributError** exception all time. 
+There is a bug with Phidget's Python library. If you want to work with Phidget I/O board using this library 
+on Raspberry Pi then there might be a problem in running your script. It may throw an **AttributError** exception all time. 
 
-I had tried to run sample TemperatureSensor-sample.py script provided by Phidget support and got the following errors:
-	
+I had tried to run TemperatureSensor-sample.py script provided by Phidget support and got the following errors:
+
 	pi@raspberrypi ~/Python $ sudo python TemperatureSensor-simple.py
 	Traceback (most recent call last):
 	  File "TemperatureSensor-simple.py", line 71, in <module>
