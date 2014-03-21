@@ -32,6 +32,14 @@ Issue:
 
 - So it seems pretty obvious that the Raspberry Pi should also be covered by these options, since it uses Linux kernel. 
 
-- But unfortunately, the platform name Python generates for Pi is 'linux2' not 'linux'. 
+- But unfortunately, the platform name Python generates for Pi is **'linux2'** not 'linux'. 
 
-- Thats why the Phidget library can not recognize it and thus fails to instantiate the required event handlers. 
+- Thats why the Phidget library can not recognize it and thus fails to instantiate the required event handlers
+
+
+Solution:
+========
+To overcome this problem, you just need to make a way to introduce Raspberry PI's platform name to the Phidget's python library.
+
+
+To do this just replace a one line of code in Phidget.py 
