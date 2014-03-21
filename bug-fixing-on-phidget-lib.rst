@@ -1,5 +1,9 @@
+Bug-Fixing on Phidget's Python library:
+===================================
+
+
 Platform:
-=========
+----------
 1. Raspbian on Raspberry Pi
 #. Phidget Interface Kit 8/8/8 (I/O board)
 #. Python (2.7 or 3.2) on Pi
@@ -7,7 +11,7 @@ Platform:
 
 
 Context:
-========
+---------
 There is a bug with Phidget's Python library. If you want to work with Phidget I/O board using this library 
 on Raspberry Pi then there might be a problem in running your script. It may throw an **AttributError** exception all time. 
 
@@ -24,7 +28,7 @@ I had tried to run TemperatureSensor-sample.py script provided by Phidget suppor
 
 
 Issue:
-=====
+------
 1. The Phidget.py module in phidget's python library, located at **/usr/local/lib/python2.7/dist-packages/Phidgets/Phidget.py** , instantiates various event handlers. 
 
 2. Those handlers are later used by your script, if you import Phidget.py module. The module generates those handlers based on your host platform, like, WIndows, Linux, Mac etc. 
@@ -42,7 +46,7 @@ Issue:
 
 
 Solution:
-========
+----------
 To overcome this problem, you just need to make a way to introduce Raspberry PI's platform name to the Phidget's python library.
 
 To do this just replace the following line in Phidget.py 
@@ -58,7 +62,7 @@ So simple!! Right!!!
 
 
 Recommendation:
-================
+-------------------
 If you get this kind of error, first check out the plaform name you are getting from your default Python installation
 
 Go to your Python interpreter and run following commands:
