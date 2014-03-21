@@ -13,6 +13,7 @@ on Raspberry Pi then there might be a problem in running your script. It may thr
 I had tried to run TemperatureSensor-sample.py script provided by Phidget support and got the following errors:
 
 	pi@raspberrypi ~/Python $ sudo python TemperatureSensor-simple.py
+		
 	Traceback (most recent call last):
 	  File "TemperatureSensor-simple.py", line 71, in <module>
 	    temperatureSensor.setOnAttachHandler(TemperatureSensorAttached)
