@@ -15,7 +15,7 @@ I had tried to run TemperatureSensor-sample.py script provided by Phidget suppor
 
 	pi@raspberrypi ~/Python $ sudo python TemperatureSensor-simple.py
 	
-	Traceback (most recent call last):
+    Traceback (most recent call last):
 	  File "TemperatureSensor-simple.py", line 71, in <module>
 	    temperatureSensor.setOnAttachHandler(TemperatureSensorAttached)
 	  File "/usr/local/lib/python2.7/dist-packages/Phidgets/Phidget.py", line 655, in setOnAttachHandler
