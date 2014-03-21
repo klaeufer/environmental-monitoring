@@ -47,11 +47,11 @@ To overcome this problem, you just need to make a way to introduce Raspberry PI'
 
 To do this just replace the following line in Phidget.py 
 
-	elif sys.platform == 'darwin' or sys.platform == 'linux':
+    elif sys.platform == 'darwin' or sys.platform == 'linux':
 
 by this one:
 
-	elif sys.platform == 'darwin' or sys.platform == 'linux' **or sys.platform == 'linux2':**
+    elif sys.platform == 'darwin' or sys.platform == 'linux' **or sys.platform == 'linux2':**
 
 So simple!! Right!!!
 
