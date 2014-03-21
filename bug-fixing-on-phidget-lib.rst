@@ -6,7 +6,7 @@ Platform:
 
 Context:
 ========
-If you want to work with Phidget I/O board using Python library on Raspberry Pi, then there might be a problem in running your Python script. Your script may throw an AttributError exception. 
+There is a bug with Phidget's Python library. If you want to work with Phidget I/O board using this library on Raspberry Pi, then there might be a problem in running your script. It may throw an **AttributError** exception. 
 
 For an example, I had tried to run TemperatureSensor module provided by Phidget support and got the following errors:
 	
