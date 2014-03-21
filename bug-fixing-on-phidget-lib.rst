@@ -9,7 +9,7 @@ Context:
 There is a bug with Phidget's Python library. If you want to work with Phidget I/O board using this library on Raspberry Pi then there might be a problem in running your script. 
 It may throw an **AttributError** exception all time. 
 
-I had tried to run sample TemperatureSensor script provided by Phidget support and got the following errors:
+I had tried to run sample TemperatureSensor-sample.py script provided by Phidget support and got the following errors:
 	
 	pi@raspberrypi ~/Python $ sudo python TemperatureSensor-simple.py
 	Traceback (most recent call last):
@@ -20,3 +20,7 @@ I had tried to run sample TemperatureSensor script provided by Phidget support a
 	**AttributeError: TemperatureSensor instance has no attribute '_Phidget__ATTACHHANDLER'**
 
 
+Issue:
+=====
+The Phidget.py module in phidget's python library, located at */usr/local/lib/python2.7/dist-packages/Phidgets/Phidget.py* , instantiates various event handler objects.
+Those handlers are later used by your script if you import Phidget.py module.
