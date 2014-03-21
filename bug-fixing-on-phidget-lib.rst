@@ -2,7 +2,7 @@ Platform:
 =========
 1. Raspbian on Raspberry Pi
 #. Phidget Interface Kit 8/8/8 (I/O board)
-#. Python (2.7 or 3.2)
+#. Python (2.7 or 3.2) on Pi
 #. PhidgetPython API installed
 
 Context:
@@ -42,7 +42,6 @@ Issue:
 Solution:
 ========
 To overcome this problem, you just need to make a way to introduce Raspberry PI's platform name to the Phidget's python library.
-
 
 To do this just replace the following line in Phidget.py 
 
