@@ -3,11 +3,12 @@ Platform:
 1. Raspbian OS on Raspberry Pi
 #. Phidget Interface Kit 8/8/8 (I/O board)
 #. Python with version 2.7 or 3.2
+#. PhidgetPython API installed
 
 Context:
 ========
-There is a bug with Phidget's Python library. If you want to work with Phidget I/O board using this library on Raspberry Pi then there might be a problem in running your script. 
-It may throw an **AttributError** exception all time. 
+There is a bug with Phidget's Python library. If you want to work with Phidget I/O board using this library on Raspberry Pi then there might be a problem 
+in running your script. It may throw an **AttributError** exception all time. 
 
 I had tried to run sample TemperatureSensor-sample.py script provided by Phidget support and got the following errors:
 	
@@ -44,14 +45,10 @@ To overcome this problem, you just need to make a way to introduce Raspberry PI'
 
 To do this just replace the following line in Phidget.py 
 
-
- elif sys.platform == 'darwin' or sys.platform == 'linux':
-
+	elif sys.platform == 'darwin' or sys.platform == 'linux':
 
 by this one:
 
-
- elif sys.platform == 'darwin' or sys.platform == 'linux' **or sys.platform == 'linux2':**
-
+	elif sys.platform == 'darwin' or sys.platform == 'linux' **or sys.platform == 'linux2':**
 
 So simple!! Right!!!
