@@ -201,7 +201,7 @@ libusb:
     
     sudo apt-get install libudev-dev
 
-    and go back to Step 2
+   and go back to Step 2
 
 
 libphidget::
