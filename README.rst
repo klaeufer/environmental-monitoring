@@ -197,7 +197,7 @@ libusb:
 
     configure: error: "udev support requested but libudev not installed"
    
-   Then you need to install libudev::
+   install libudev::
     
     sudo apt-get install libudev-dev
 
