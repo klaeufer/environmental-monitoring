@@ -193,10 +193,10 @@ libusb:
     cd libusb-1.0.9
     sudo ./configure; sudo make; sudo make install
 
-If you get any error like this
-    configure: error: "udev support requested but libudev not installed"
-Then you need to install libudev
-    sudo apt-get install libudev-dev
+    If you get any error like this
+        configure: error: "udev support requested but libudev not installed"
+    Then you need to install libudev
+        sudo apt-get install libudev-dev
 
 libphidget::
 
