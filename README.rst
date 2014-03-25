@@ -169,6 +169,7 @@ Raspberry Pi Software Install:
     sudo apt-get install python-setuptools
     sudo easy_install virtualenv
     sudo easy_install pip
+    sudo pip install pyserial
 
     sudo apt-get install git
     sudo apt-get install mercurial
