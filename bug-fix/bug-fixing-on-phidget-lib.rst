@@ -49,11 +49,11 @@ Solution:
 ----------
 To overcome this problem, you just need to make a way to introduce Raspberry PI's platform name to the Phidget's python library.
 
-To do this just replace the following line in Phidget.py 
+To do this just replace the following line in Phidget.py:: 
 
     elif sys.platform == 'darwin' or sys.platform == 'linux':
 
-by this one:
+by this one::
 
     elif sys.platform == 'darwin' or sys.platform == 'linux' **or sys.platform == 'linux2':**
 
@@ -65,7 +65,8 @@ Recommendation:
 -------------------
 If you get this kind of error, first check out the plaform name you are getting from your default Python installation
 
-Go to your Python interpreter and run following commands:
+Go to your Python interpreter and run following commands::
+
    >>> import sys
    >>> sys.platform
    'linux2'
