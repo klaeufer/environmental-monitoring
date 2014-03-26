@@ -7,6 +7,12 @@ Created on Mar 25, 2014
 from Phidgets.PhidgetException import PhidgetErrorCodes, PhidgetException
 from Phidgets.Devices.InterfaceKit import InterfaceKit
 
+temperature = 0
+humidity = 0
+
+outfile = open("sensor-data.csv", "w")
+outfile.write("Time, Temperature, Humidity \n")
+
 
 def sensorChanged(e):
     print("Sensor %i: %i" % (e.index, e.value))
