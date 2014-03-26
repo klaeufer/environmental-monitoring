@@ -25,13 +25,11 @@ def sensorChanged(e):
     global humidity
     
     if e.index == 0:
-        temperature = e.value        
-        outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
+        temperature = e.value                
     elif e.index == 1:
-        humidity = e.value   
-        outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
-             
-    #outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
+        humidity = e.value                        
+    outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
+    
     sys.stdout.write(".")
     sys.stdout.flush()    
     return 0
