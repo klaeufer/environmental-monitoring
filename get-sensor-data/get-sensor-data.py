@@ -38,6 +38,11 @@ device.waitForAttach(10000)
 print("Device(%d) attached!" % (device.getSerialNum()))
 
 
+# Set trigger point
+device.setSensorChangeTrigger(0, 1)
+device.setSensorChangeTrigger(1, 2)
+
+
 print(device.getSensorValue(0))
 print(device.getSensorValue(1))
 
