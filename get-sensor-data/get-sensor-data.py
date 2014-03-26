@@ -27,3 +27,7 @@ except PhidgetException as e:
 # Wait for device attachment
 device.waitForAttach(10000)
 print("Device(%d) attached!" % (device.getSerialNum()))
+
+
+print(device.getSensorValue(0))
+print(device.getSensorValue(1))
