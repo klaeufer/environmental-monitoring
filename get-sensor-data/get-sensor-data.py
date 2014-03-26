@@ -10,6 +10,10 @@ from Phidgets.Devices.InterfaceKit import InterfaceKit
 from time import time
 import sys
 
+WAIT_TIME = 10000
+TRIGGERING_POINT_TEMPERATURE = 1
+TRIGGERING_POINT_HUMIDITY = 2
+
 
 temperature = 0
 humidity = 0
@@ -56,12 +60,12 @@ except PhidgetException as e:
 
 
 # Wait for device attachment
-device.waitForAttach(10000)
+device.waitForAttach(WAIT_TIME)
 print("Device(%d) attached!" % (device.getSerialNum()))
 
 # Set trigger point
-device.setSensorChangeTrigger(0, 1)
-device.setSensorChangeTrigger(1, 2)
+device.setSensorChangeTrigger(0, TRIGGERING_POINT_TEMPERATURE)
+device.setSensorChangeTrigger(1, TRIGGERING_POINT_HUMIDITY)
 
 
 print("Press Enter to end anytime...");
