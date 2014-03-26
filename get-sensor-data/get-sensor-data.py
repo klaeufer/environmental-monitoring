@@ -8,6 +8,11 @@ from Phidgets.PhidgetException import PhidgetErrorCodes, PhidgetException
 from Phidgets.Devices.InterfaceKit import InterfaceKit
 
 
+def sensorChanged(e):
+    print("Sensor %i: %i" % (e.index, e.value))
+    return 0
+
+
 # Create InterfaceKit device
 try:
     device = InterfaceKit()
@@ -31,3 +36,4 @@ print("Device(%d) attached!" % (device.getSerialNum()))
 
 print(device.getSensorValue(0))
 print(device.getSensorValue(1))
+
