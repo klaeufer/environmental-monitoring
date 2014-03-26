@@ -15,8 +15,21 @@ outfile.write("Time, Temperature, Humidity \n")
 
 
 def sensorChanged(e):
-    print("Sensor %i: %i" % (e.index, e.value))
+    #print("Sensor %i: %i" % (e.index, e.value))
+    global outfile
+    global temperature
+    global humidity
+    
+    if e.index == 0:
+        temperature = e.value                
+    elif e.index == 1:
+        humidity = e.value           
+             
+    outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
+    sys.stdout.write(".")
+    sys.stdout.flush()    
     return 0
+
 
 
 # Create InterfaceKit device
