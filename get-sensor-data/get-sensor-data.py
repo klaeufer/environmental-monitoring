@@ -19,7 +19,11 @@ try:
     print("InterfaceKit created..")
 except RuntimeError as e:
     print("Runtime error: %s" % e.message)
-    
+
+
+ 
+device.setOnSensorChangeHandler(sensorChanged)
+
 
 # Open it
 try:
