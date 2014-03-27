@@ -19,7 +19,7 @@ temperature = 0
 humidity = 0
 
 outfile = open("sensor-data.csv", "w")
-outfile.write("Time, Temperature, Humidity \n")
+outfile.write("Time, Temperature(C), Humidity(%) \n")
 
 # Event listener action
 def sensorChanged(e):
@@ -29,9 +29,11 @@ def sensorChanged(e):
     global humidity
     
     if e.index == 0:
-        temperature = e.value                
+        raw_data = e.value
+        temperature = (raw_data * 0.22222) - 61.11 
     elif e.index == 1:
-        humidity = e.value                        
+        raw_data = e.value
+        humidity = (raw_data * 0.1906) - 40.2                        
     outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
     
     sys.stdout.write(".")
