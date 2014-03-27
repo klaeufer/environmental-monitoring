@@ -16,9 +16,10 @@ from Phidgets.Devices.InterfaceKit import InterfaceKit
 from time import time
 import sys
 
+# Define constants
 WAIT_TIME = 10000
-TEMPERATURE_TRIGGERING_POINT = 1
-HUMIDITY_TRIGGERING_POINT = 2
+TEMPERATURE_TRIGGERING_POINT = 1    # Event triggered if raw-data changed by 1 point
+HUMIDITY_TRIGGERING_POINT = 2       # Event triggered if raw-data changed by 2 point
 
 
 temperature = 0
@@ -78,9 +79,10 @@ except PhidgetException as e:
     print("Phidget exception %i: %s" % (e.code, e.detail))
 
 
-# Wait for device attachment
+# Wait for device to be attached
 device.waitForAttach(WAIT_TIME)
 print("Device(%d) attached!" % (device.getSerialNum()))
+
 
 # Set trigger point
 device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)
