@@ -48,9 +48,9 @@ def sensorChanged(e):
     global temperature
     global humidity
     
-    if e.index == 0:        
+    if e.index == 0:                                    # Port 0 = Temperature
         temperature = temperatureFormula(e.value) 
-    elif e.index == 1:        
+    elif e.index == 1:                                  # Port 1 = Humidity
         humidity = humidityFormula(e.value)                     
     
     outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
@@ -98,8 +98,8 @@ def start():
     print("Device(%d) attached!" % (device.getSerialNum()))    
     
     # Set trigger point
-    device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)      # 0 = Temperature
-    device.setSensorChangeTrigger(1, HUMIDITY_TRIGGERING_POINT)         # 1 = Humidity
+    device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)      # Port 0 = Temperature
+    device.setSensorChangeTrigger(1, HUMIDITY_TRIGGERING_POINT)         # Port 1 = Humidity
 
     # Exit
     print("Press Enter to end anytime...");
