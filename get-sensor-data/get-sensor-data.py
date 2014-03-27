@@ -60,42 +60,57 @@ def sensorChanged(e):
     return 0
 
 
-# Create InterfaceKit device
-try:
-    device = InterfaceKit()
-    print("InterfaceKit created..")
-except RuntimeError as e:
-    print("Runtime error: %s" % e.message)
+
+# Create InterfaceKit
+def createIK():
+    try:
+        device = InterfaceKit()
+        print("InterfaceKit created..")
+        return device
+    except RuntimeError as e:
+        print("Runtime error: %s" % e.message)
 
 
-# Registering all sensors on change value event
-device.setOnSensorChangeHandler(sensorChanged)
+
+# Open InterfaceKit
+def openIK(device):
+    try:
+        device.openPhidget()
+        print("InterfaceKit opened..")
+    except PhidgetException as e:    
+        print("Phidget exception %i: %s" % (e.code, e.detail))
 
 
-# Open it
-try:
-    device.openPhidget()
-    print("InterfaceKit opened..")
-except PhidgetException as e:    
-    print("Phidget exception %i: %s" % (e.code, e.detail))
 
 
-# Wait for device to be attached
-device.waitForAttach(WAIT_TIME)
-print("Device(%d) attached!" % (device.getSerialNum()))
+def start():
+    # Create Interface Kit
+    device = createIK()
+    
+    # Registering all sensors on change value event
+    device.setOnSensorChangeHandler(sensorChanged)
 
+    # Open it
+    openIK(device)
+    
+    # Wait for device to be attached
+    device.waitForAttach(WAIT_TIME)
+    print("Device(%d) attached!" % (device.getSerialNum()))    
+    
+    # Set trigger point
+    device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)
+    device.setSensorChangeTrigger(1, HUMIDITY_TRIGGERING_POINT)
 
-# Set trigger point
-device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)
-device.setSensorChangeTrigger(1, HUMIDITY_TRIGGERING_POINT)
+    # Exit
+    print("Press Enter to end anytime...");
+    character = str(raw_input())
+    
+    device.closePhidget()
+    exit(0)
 
-
-# Exit
-print("Press Enter to end anytime...");
-character = str(raw_input())
-
-device.closePhidget()
-exit(0)
+    
+if __name__ == '__main__':
+    start()
 
 #print(device.getSensorValue(0))
 #print(device.getSensorValue(1))
