@@ -98,8 +98,8 @@ def start():
     print("Device(%d) attached!" % (device.getSerialNum()))    
     
     # Set trigger point
-    device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)      # Temperature
-    device.setSensorChangeTrigger(1, HUMIDITY_TRIGGERING_POINT)         # Humidity
+    device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)      # 0 = Temperature
+    device.setSensorChangeTrigger(1, HUMIDITY_TRIGGERING_POINT)         # 1 = Humidity
 
     # Exit
     print("Press Enter to end anytime...");
