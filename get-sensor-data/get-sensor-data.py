@@ -17,8 +17,8 @@ from time import time
 import sys
 
 WAIT_TIME = 10000
-TRIGGERING_POINT_TEMPERATURE = 1
-TRIGGERING_POINT_HUMIDITY = 2
+TEMPERATURE_TRIGGERING_POINT = 1
+HUMIDITY_TRIGGERING_POINT = 2
 
 
 temperature = 0
@@ -83,8 +83,8 @@ device.waitForAttach(WAIT_TIME)
 print("Device(%d) attached!" % (device.getSerialNum()))
 
 # Set trigger point
-device.setSensorChangeTrigger(0, TRIGGERING_POINT_TEMPERATURE)
-device.setSensorChangeTrigger(1, TRIGGERING_POINT_HUMIDITY)
+device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)
+device.setSensorChangeTrigger(1, HUMIDITY_TRIGGERING_POINT)
 
 
 print("Press Enter to end anytime...");
