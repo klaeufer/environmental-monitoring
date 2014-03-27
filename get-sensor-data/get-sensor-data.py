@@ -29,19 +29,19 @@ outfile = open("sensor-data.csv", "w")
 outfile.write("Time, Temperature(C), Humidity(%) \n")
 
 
-# Formula for converting raw Temperature data to human readable unit (C)
+# Formula for converting raw Temperature data to meaningful unit (C)
 def temperatureFormula(raw_data):
     temp = (raw_data * 0.22222) - 61.11
     return '%.2f' % temp
 
 
-# Formula for converting raw Humidity data to human readable unit (%)
+# Formula for converting raw Humidity data to meaningful unit (%)
 def humidityFormula(raw_data):
     humid = (raw_data * 0.1906) - 40.2
     return '%.2f' % humid
 
 
-# Event listener action
+# Event/Change listener action
 def sensorChanged(e):
     #print("Sensor %i: %i" % (e.index, e.value))
     global outfile
@@ -52,6 +52,7 @@ def sensorChanged(e):
         temperature = temperatureFormula(e.value) 
     elif e.index == 1:        
         humidity = humidityFormula(e.value)                     
+    
     outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
     
     sys.stdout.write(".")
@@ -89,6 +90,7 @@ device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)
 device.setSensorChangeTrigger(1, HUMIDITY_TRIGGERING_POINT)
 
 
+# Exit
 print("Press Enter to end anytime...");
 character = str(raw_input())
 
