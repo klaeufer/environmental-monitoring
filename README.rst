@@ -5,6 +5,7 @@ Project Layout
 --------------
 
 /bug-fix - *Bug fix documentation*
+
 /src - *Source code* 
 /images - *Images used in documentation.*
 /setup - *Includes documentation for setting up Phidgets and RPi.*
