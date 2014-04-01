@@ -7,10 +7,15 @@ Project Layout
 /bug-fix - *Bug fix documentation*
 
 /src - *Source code* 
+
 /images - *Images used in documentation.*
+
 /setup - *Includes documentation for setting up Phidgets and RPi.*
+
 Procfile - *Heroku's way to find the app. Must be at root.*
+
 requirements.txt - *Python dependencies to run the web server.*
+
 routes.py - *Main function with all the routes."*
 
 Running The Webservice (assumes you have completed setup)
