@@ -68,7 +68,7 @@ def sensorChanged(e):
 
 
 
-# making JSON format and then POST onto Server
+# Making JSON format and then POST onto Server
 def POST(dt, temp, humid):     
     payload = {'datetime': dt, 'temp': temperature, 'humid': humidity}
     req = requests.post(URL, data = json.dumps(payload))    
@@ -97,7 +97,7 @@ def openIK(device):
 
 
 
-
+# Starting point
 def start():
     # Create Interface Kit
     device = createIK()
