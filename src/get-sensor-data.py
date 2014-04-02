@@ -15,11 +15,13 @@ from Phidgets.Devices.InterfaceKit import InterfaceKit
 
 from time import time
 import sys
+import requests
 
 # Define constants
 WAIT_TIME = 10000
 TEMPERATURE_TRIGGERING_POINT = 1    # Event triggered if raw-data changed by 1 point
 HUMIDITY_TRIGGERING_POINT = 2       # Event triggered if raw-data changed by 2 point
+URL = 'http://environmental-monitoring.herokuapp.com/'
 
 
 temperature = 0
@@ -54,6 +56,8 @@ def sensorChanged(e):
         humidity = humidityFormula(e.value)                     
     
     outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
+    
+    payload = {'temp': temperature, 'humid': humidity}
     
     sys.stdout.write(".")
     sys.stdout.flush()    
