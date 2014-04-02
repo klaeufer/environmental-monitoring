@@ -3,11 +3,11 @@ Created on Mar 25, 2014
 @author: asraf
 
 This script fetches raw data from Temperature and Humidity sensors attached with Phidgets 
-and converts them into human readable format. Data are collected based on the 
-event triggered by each individual sensor.
+and converts them into human readable format. It follows event-based data collection
+triggered on each individual sensors.
 
-Temperature sensor --> Triggers an event when raw data changed by 1 point (default)
-Humidity sensor    --> Triggers an event when raw data changed by 2 point (default)
+Temperature sensor --> Event triggers when raw data changed by 1 point (default)
+Humidity sensor    --> Event triggers when raw data changed by 1 point (default)
 '''
 
 from Phidgets.PhidgetException import PhidgetErrorCodes, PhidgetException
