@@ -60,9 +60,9 @@ def sensorChanged(e):
     
     outfile.write(str(dt) + ", " + str(temperature) + ", " + str(humidity) + "\n")
     
-    # making json data format to dump on to server 
+    # making json format to dump on to server 
     payload = {'datetime': dt, 'temp': temperature, 'humid': humidity}
-    req = requests.post(URL, data = json.dumps(payload))
+    req = requests.post(URL, data = json.dumps(payload))    
     print(req)
     
     
