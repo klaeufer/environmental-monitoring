@@ -15,6 +15,7 @@ from Phidgets.Devices.InterfaceKit import InterfaceKit
 
 from time import time
 import sys
+import json
 import requests
 
 # Define constants
@@ -61,6 +62,8 @@ def sensorChanged(e):
     
     # making json data format to dump on to server 
     payload = {'datetime': dt, 'temp': temperature, 'humid': humidity}
+    req = requests.post(URL, data = json.dumps(payload))
+    print(req)
     
     
     sys.stdout.write(".")
