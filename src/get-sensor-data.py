@@ -19,13 +19,6 @@ import json
 import requests
 import config
 
-# Define constants
-WAIT_TIME = 10000
-TEMPERATURE_TRIGGERING_POINT = 1    # Event triggered if raw-data changed by 1 point
-HUMIDITY_TRIGGERING_POINT = 1       # Event triggered if raw-data changed by 1 point
-URL = 'http://environmental-monitoring.herokuapp.com/'
-
-
 temperature = 0
 humidity = 0
 
