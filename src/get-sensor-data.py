@@ -17,6 +17,7 @@ from time import time
 import sys
 import json
 import requests
+import config
 
 # Define constants
 WAIT_TIME = 10000
@@ -71,7 +72,7 @@ def sensorChanged(e):
 # Making JSON format and then POST onto Server
 def POST(dt, temp, humid):     
     payload = {'datetime': dt, 'temp': temperature, 'humid': humidity}
-    req = requests.post(URL, data = json.dumps(payload))    
+    req = requests.post(config.URL, data = json.dumps(payload))    
     print(req)
     
     
@@ -109,12 +110,12 @@ def start():
     openIK(device)
     
     # Wait for device to be attached
-    device.waitForAttach(WAIT_TIME)
+    device.waitForAttach(config.WAIT_TIME)
     print("Device(%d) attached!" % (device.getSerialNum()))    
     
     # Set trigger point
-    device.setSensorChangeTrigger(0, TEMPERATURE_TRIGGERING_POINT)      # Port 0 = Temperature
-    device.setSensorChangeTrigger(1, HUMIDITY_TRIGGERING_POINT)         # Port 1 = Humidity
+    device.setSensorChangeTrigger(0, config.TEMPERATURE_TRIGGERING_POINT)      # Port 0 = Temperature
+    device.setSensorChangeTrigger(1, config.HUMIDITY_TRIGGERING_POINT)         # Port 1 = Humidity
 
     # Exit
     print("Press Enter to end anytime...");
