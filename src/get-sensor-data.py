@@ -50,14 +50,18 @@ def sensorChanged(e):
     global temperature
     global humidity
     
+    dt = time()
+    
     if e.index == 0:                                    # Port 0 = Temperature
         temperature = temperatureFormula(e.value) 
     elif e.index == 1:                                  # Port 1 = Humidity
         humidity = humidityFormula(e.value)                     
     
-    outfile.write(str(time()) + ", " + str(temperature) + ", " + str(humidity) + "\n")
+    outfile.write(str(dt) + ", " + str(temperature) + ", " + str(humidity) + "\n")
     
-    payload = {'temp': temperature, 'humid': humidity}
+    # making json data format to dump on to server 
+    payload = {'datetime': dt, 'temp': temperature, 'humid': humidity}
+    
     
     sys.stdout.write(".")
     sys.stdout.flush()    
