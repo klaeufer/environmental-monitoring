@@ -20,7 +20,7 @@ import requests
 # Define constants
 WAIT_TIME = 10000
 TEMPERATURE_TRIGGERING_POINT = 1    # Event triggered if raw-data changed by 1 point
-HUMIDITY_TRIGGERING_POINT = 2       # Event triggered if raw-data changed by 2 point
+HUMIDITY_TRIGGERING_POINT = 1       # Event triggered if raw-data changed by 1 point
 URL = 'http://environmental-monitoring.herokuapp.com/'
 
 
