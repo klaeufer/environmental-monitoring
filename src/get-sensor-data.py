@@ -22,8 +22,8 @@ import config
 temperature = 0
 humidity = 0
 
-outfile = open("sensor-data.csv", "w")
-outfile.write("Time, Temperature(C), Humidity(%) \n")
+outfile = open(config.OUT_FILE, "w")
+outfile.write(config.CSV_HEADER)
 
 
 # Formula for converting raw Temperature data to meaningful unit (C)
