@@ -60,17 +60,21 @@ def sensorChanged(e):
     
     outfile.write(str(dt) + ", " + str(temperature) + ", " + str(humidity) + "\n")
     
-    # making json format to dump on to server 
-    payload = {'datetime': dt, 'temp': temperature, 'humid': humidity}
-    req = requests.post(URL, data = json.dumps(payload))    
-    print(req)
-    
-    
+    POST(dt, temperature, humidity)
+        
     sys.stdout.write(".")
     sys.stdout.flush()    
     return 0
 
 
+
+# making JSON format and then POST onto Server
+def POST(dt, temp, humid):     
+    payload = {'datetime': dt, 'temp': temperature, 'humid': humidity}
+    req = requests.post(URL, data = json.dumps(payload))    
+    print(req)
+    
+    
 
 # Create InterfaceKit
 def createIK():
