@@ -1,11 +1,2 @@
 Flask==0.10.1
-pymongo==2.6.3
-Jinja2==2.7.1
-MarkupSafe==0.18
-Werkzeug==0.9.4
-argparse==1.2.1
 gunicorn==18.0
-itsdangerous==0.23
-wsgiref==0.1.2
-requests==0.14.2
-pytz==2013.8
