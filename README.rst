@@ -35,6 +35,10 @@ To run the webservice locally, run the followng commands:
 
 That will run the web service at localhost:5000
 
+To push to heroku::
+
+    git push git@heroku.com:environmental-monitoring.git master
+
 Running The Sensor Webservice
 -----------------------------
 Please see the /setup folder's README for setting up the sensor server on the Raspberry Pi.
