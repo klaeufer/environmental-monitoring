@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath src routes:app
+web: gunicorn --pythonpath src/aggregation_server routes:app
