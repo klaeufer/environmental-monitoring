@@ -171,6 +171,7 @@ Raspberry Pi Software Install:
     sudo easy_install pip
     sudo pip install pyserial
     sudo pip install Flask gunicorn
+    sudo apt-get install supervisor
 
     sudo apt-get install git
     sudo apt-get install mercurial
@@ -289,3 +290,30 @@ Here are the steps to clone the Raspbian image to an SD card:
 #. This will clone the raspberrypi image to your SD card. Running the command cah take almost an hour and shows no sign of progress until it is finished. **DO NOT CANCEL THIS COMMAND WHILE RUNNING OR YOU WILL CORRUPT YOUR SD CARD**.
 #. If you corrupt your SD card, you can use gparted again to remove all partitions and format as fat32 again to try again.
 #. When it is finished, you will have your 8GB Raspberry Pi image on your SD card.
+
+Running The Sensor Webservice
+-----------------------------
+Edit the startup file::
+
+    sudo nano /etc/supervisor/conf.d/sensor.conf
+
+The file should read::
+
+    [program:sensor]
+    command = gunicorn -w 8 -b 0.0.0.0:5000 sensor:app
+    directory = /home/xyz/Work/hiv-biojava-scala/scripts/
+    user = xyz
+
+Now restart the supervisor::
+
+    sudo supervisorctl reread
+    sudo supervisorctl reload
+    sudo supervisorctl start sensor
+
+If you ever want to stop the service::
+
+    sudo supervisorctl stop sensor
+
+The service will come up at localhost:5000
+
+

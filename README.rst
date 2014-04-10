@@ -8,11 +8,13 @@ Project Layout
 | /images - *Images used in documentation.*
 | /setup - *Includes documentation for setting up Phidgets and RPi.*
 | /src - *Source code* 
+|   /aggregation_server
+|   /sensor_server
 | Procfile - *Heroku's way to find the app. Must be at root.*
-| requirements.txt - *Python dependencies to run the web server.*
+| requirements.txt - *Python dependencies to run the web servers.*
 
-Running The Webservice (assumes you have completed setup)
----------------------------------------------------------
+Running The Aggregation Webservice
+----------------------------------
 To run the webservice locally, run the followng commands:
 
 1. This sets up your virtual environment::
@@ -32,3 +34,7 @@ To run the webservice locally, run the followng commands:
     foreman start
 
 That will run the web service at localhost:5000
+
+Running The Sensor Webservice
+-----------------------------
+Please see the /setup folder's README for setting up the sensor server on the Raspberry Pi.
