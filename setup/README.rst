@@ -176,6 +176,8 @@ Raspberry Pi Software Install:
     sudo apt-get install git
     sudo apt-get install mercurial
     sudo apt-get install curl
+    
+    wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 Phidgets Tutorial:
 ==================

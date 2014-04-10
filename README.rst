@@ -39,6 +39,10 @@ To push to heroku::
 
     git push git@heroku.com:environmental-monitoring.git master
 
+If you get a permission denied (public key) message, run this::
+
+    heroku keys:add
+
 Running The Sensor Webservice
 -----------------------------
 Please see the /setup folder's README for setting up the sensor server on the Raspberry Pi.
