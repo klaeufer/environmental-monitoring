@@ -6,14 +6,14 @@ Project Layout
 
 ::
 
-/bug-fix - *Bug fix documentation*
-/images - *Images used in documentation.*
-/setup - *Includes documentation for setting up Phidgets and RPi.*
-/src - *Source code* 
-  /aggregation_server
-  /sensor_server
-Procfile - *Heroku's way to find the app. Must be at root.*
-requirements.txt - *Python dependencies to run the web servers.*
+  /bug-fix - *Bug fix documentation*
+  /images - *Images used in documentation.*
+  /setup - *Includes documentation for setting up Phidgets and RPi.*
+  /src - *Source code* 
+    /aggregation_server
+    /sensor_server
+  Procfile - *Heroku's way to find the app. Must be at root.*
+  requirements.txt - *Python dependencies to run the web servers.*
 
 Running The Aggregation Webservice
 ----------------------------------
