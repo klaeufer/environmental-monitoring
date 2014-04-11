@@ -169,10 +169,9 @@ Raspberry Pi Software Install:
     sudo apt-get install python-setuptools
     sudo easy_install virtualenv
     sudo easy_install pip
-    sudo pip install pyserial
-    sudo pip install Flask gunicorn
-    sudo apt-get install supervisor
+    sudo pip install Flask gunicorn pyserial
 
+    sudo apt-get install supervisor
     sudo apt-get install git
     sudo apt-get install mercurial
     sudo apt-get install curl
@@ -303,11 +302,12 @@ The file should read::
 
     [program:sensor]
     command = gunicorn -w 8 -b 0.0.0.0:5000 sensor:app
-    directory = /home/xyz/Work/hiv-biojava-scala/scripts/
-    user = xyz
+    directory = /home/pi/environmental-monitoring/src/sensor_server
+    user = pi
 
 Now restart the supervisor::
 
+    sudo service supervisor start
     sudo supervisorctl reread
     sudo supervisorctl reload
     sudo supervisorctl start sensor
