@@ -11,7 +11,10 @@ Project Layout
   /setup - *Includes documentation for setting up Phidgets and RPi.*
   /src - *Source code* 
     /aggregation_server
+    /arduino
+    /sensor_push_client
     /sensor_server
+    /sensor_utils
   Procfile - *Heroku's way to find the app. Must be at root.*
   requirements.txt - *Python dependencies to run the web servers.*
 
