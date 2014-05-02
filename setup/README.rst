@@ -176,6 +176,7 @@ Raspberry Pi Software Install:
     sudo apt-get install mercurial
     sudo apt-get install curl
     sudo apt-get install gunicorn
+    sudo apt-get install sqlite3
     
     wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
